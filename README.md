@@ -19,27 +19,29 @@ Original scripts from http://files.eprints.org/383/
 
 2. Configure auto-apache.conf having added in existing virtual a host the following:
 
- <Directory "/eprints/cgi/soap/"> 
-   SetHandler perl-script 
-   PerlHandler ModPerl:: Registry 
-   PerlSendHeader Off 
-   Options ExecCGI FollowSymLinks 
-   PerlHandler ServerDemo 
-   PerlOptions +GlobalRequest 
-   AddHandler cgi-script cgi 
-   AllowOverride None 
-   Options +ExecCGI-MultiViews 
-   Order allow, deny 
-   Allow from all 
- </Directory> 
+```
+<Directory "/eprints/cgi/soap/"> 
+  SetHandler perl-script 
+  PerlHandler ModPerl:: Registry 
+  PerlSendHeader Off 
+  Options ExecCGI FollowSymLinks 
+  PerlHandler ServerDemo 
+  PerlOptions +GlobalRequest 
+  AddHandler cgi-script cgi 
+  AllowOverride None 
+  Options +ExecCGI-MultiViews 
+  Order allow, deny 
+  Allow from all 
+</Directory> 
+```
 
 = Installation =
 
-1. Create directory in your ePrints directory: \eprints\cgi\soap
+1. Create directory in your ePrints directory: /eprints/cgi/soap
 
 2. In this directory copy the cgi scripts: SearchServ.cgi MetaDataServ.cgi
 
-3. Create directory \eprints\archives\{your archive id}\html\{your default languge}\wsdl”
+3. Create directory /eprints/archives/{your archive id}/html/{your default languge}/wsdl
 
 4. In this directory copy the wsdl files: MetaDataServ.wsdl SearchServ.wsdl
 
