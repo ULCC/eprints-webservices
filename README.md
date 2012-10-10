@@ -62,4 +62,4 @@ section <VirtualHost>  must have
 
 4. In this directory copy the wsdl files: MetaDataServ2.wsdl SearchServ2.wsdl putEprints2.wsdl
 
-5. Replace in MetaDataServ.wsdl SearchServ.wsdl string you.domain with your domain 
+5. Replace in MetaDataServ2.wsdl SearchServ2.wsdl putEprints2.wsdl string you.domain with your domain 
