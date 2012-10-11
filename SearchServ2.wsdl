@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by any (Ru-Board) -->
-<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://you.domain/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsdl="http://you.domain/wsdl/" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="searchEprint" targetNamespace="http://you.domain/wsdl/">
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://eprints.zu.edu.ua/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsdl="http://eprints.zu.edu.ua/wsdl/" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="searchEprint" targetNamespace="http://eprints.zu.edu.ua/wsdl/">
 	<types>
-		<schema targetNamespace="http://you.domain/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+		<schema targetNamespace="http://eprints.zu.edu.ua/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
 			<complexType name="creators">
 				<sequence>
 					<element name="name" type="xsd:string"/>
@@ -34,6 +34,7 @@
 	<message name="searchEprintRequest">
 		<part name="key" type="xsd:string"/>
 		<part name="fields" type="tns:ArrayOfstring"/>
+		<part name="date_range" type="xsd:string"/>
 	</message>
 	<message name="searchEprintResponse">
 		<part name="id" type="tns:ListOfID"/>
@@ -59,7 +60,7 @@
 	</binding>
 	<service name="Eprints_Service">
 		<port name="Eprints_Port" binding="tns:Eprints_Binding">
-			<soap:address location="http://you.domain/cgi/soap/SearchServ.cgi"/>
+			<soap:address location="http://eprints.zu.edu.ua/cgi/soap/SearchServ.cgi"/>
 		</port>
 	</service>
 </definitions>

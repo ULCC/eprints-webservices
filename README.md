@@ -20,20 +20,37 @@ Original scripts from http://files.eprints.org/383/
 2. Configure auto-apache.conf having added in existing virtual a host the following:
 
 ```
-<Directory "/eprints/cgi/soap/"> 
-  SetHandler perl-script 
-  PerlHandler ModPerl:: Registry 
-  PerlSendHeader Off 
-  Options ExecCGI FollowSymLinks 
-  PerlHandler ServerDemo 
-  PerlOptions +GlobalRequest 
-  AddHandler cgi-script cgi 
-  AllowOverride None 
-  Options +ExecCGI-MultiViews 
-  Order allow, deny 
-  Allow from all 
-</Directory> 
-```
+
+
+/path_to_eprints/archives/archive_id/var/auto-apache.conf
+
+section <VirtualHost>  must have 
+.
+.
+.
+
+   <Directory "/path_to_eprints/cgi/soap/">
+
+   SetHandler perl-script
+   PerlHandler ModPerl::Registry
+   PerlHandler Apache::Registry
+   PerlSendHeader On
+   Options ExecCGI FollowSymLinks
+   PerlHandler ServerDemo
+   PerlOptions +GlobalRequest
+   AddHandler cgi-script .cgi
+   AllowOverride None
+   Options ExecCGI FollowSymLinks
+   Order allow,deny
+   Allow from all
+   </Directory>
+
+.
+.
+.
+</VirtualHost>
+
+
 
 = Installation =
 
@@ -43,6 +60,6 @@ Original scripts from http://files.eprints.org/383/
 
 3. Create directory /eprints/archives/{your archive id}/html/{your default languge}/wsdl
 
-4. In this directory copy the wsdl files: MetaDataServ.wsdl SearchServ.wsdl
+4. In this directory copy the wsdl files: MetaDataServ2.wsdl SearchServ2.wsdl putEprints2.wsdl
 
-5. Replace in MetaDataServ.wsdl SearchServ.wsdl string you.domain with your domain 
+5. Replace in MetaDataServ2.wsdl SearchServ2.wsdl putEprints2.wsdl string you.domain with your domain 
