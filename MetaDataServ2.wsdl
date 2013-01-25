@@ -86,7 +86,8 @@
 	</binding>
 	<service name="Eprints_Service">
 		<port name="Eprints_Port" binding="tns:Eprints_Binding">
-			<soap:address location="http://eprints.zu.edu.ua/cgi/soap/MetaDataServ.cgi"/>
+                    
+			<soap:address location="http://eprints.vl-software.com/cgi/soap/MetaDataServ.cgi"/>
 		</port>
 	</service>
 </definitions>
